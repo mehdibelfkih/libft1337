@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 09:57:26 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/21 16:46:02 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:49:05 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void		*ft_memcpy(void *dest, const void *src, size_t n);
 void		*ft_memmove(void *dest, const void *src, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
 char		*ft_strdup(const char *s1);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 const char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 #endif
