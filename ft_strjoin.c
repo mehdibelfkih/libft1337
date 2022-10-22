@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 15:29:17 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/22 13:20:45 by ebelfkih         ###   ########.fr       */
+/*   Created: 2022/10/22 11:47:20 by ebelfkih          #+#    #+#             */
+/*   Updated: 2022/10/22 13:23:52 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*s1;
-	char	*s2;
-	char	*s3;
+	size_t	i;
+	size_t	j;
+	char	*s;
 
-	s1 = "el mehdi";
-	s2 = "belfkih";
-	s3 = ft_strjoin(s1, s2);
-	printf("b > %s\n", s1);
-	printf("o > %s\n", s2);
-	printf("o > %s\n", s3);
+	i = 0;
+	j = ft_strlen(s1) + ft_strlen(s2) - 1;
+	s = malloc(j);
+	if (!s)
+		return (NULL);
+	while (s1)
+	{
+		s[i] = s1[i];
+		i++;
+	}
+	while (s2)
+	{
+		s[i] = s2[i];
+		i++;
+	}
+	s[i] = '\0';
+	return (s);
 }

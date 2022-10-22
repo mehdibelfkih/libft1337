@@ -6,9 +6,9 @@
 #    By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 09:52:57 by ebelfkih          #+#    #+#              #
-#    Updated: 2022/10/22 11:17:04 by ebelfkih         ###   ########.fr        #
+#    Updated: 2022/10/22 13:21:07 by ebelfkih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 build:
-	cc *.c -o test.a  -Wall -Wextra -Werror && ./test.a  cat -e
+	cc *.c -o test.a  -Wall -Wextra -Werror && ./test.a
