@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 15:29:17 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/25 13:46:41 by ebelfkih         ###   ########.fr       */
+/*   Created: 2022/10/25 13:49:01 by ebelfkih          #+#    #+#             */
+/*   Updated: 2022/10/25 13:49:55 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libc.h"
 
-int	main(void)
+char	**ft_split(char const *s, char c)
 {
-	char	*s3;
-
-	// s3 = ft_strjoin("", "NULL");
-	s3 = ft_strtrim("mehdi", "mehdi");
-	printf("o > %s\n", s3);
+	
 }

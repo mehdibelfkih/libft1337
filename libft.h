@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 09:57:26 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/22 13:16:20 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:36:49 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void		*ft_memchr(const void *s, int c, size_t n);
 char		*ft_strdup(const char *s1);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strtrim(char const *s1, char const *set);
 const char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 #endif
