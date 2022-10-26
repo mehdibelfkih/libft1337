@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:34:36 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/26 01:34:40 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/26 13:52:11 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s = malloc(t - l + 1);
 	if (!s)
 		return (NULL);
-	while (t > 0 )
+	while (t > 0)
 	{
 		s[j] = s[l];
 		l++;
@@ -57,4 +57,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s[j] = '\0';
 	return (s);
 }
-
