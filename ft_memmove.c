@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 00:59:01 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/21 14:42:41 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/25 21:22:37 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;
-	if (d == (unsigned char *)0 && s == (unsigned char *)0)
+	if (d == NULL && s == NULL)
 		return (NULL);
 	if (d > s)
 		while (n-- > 0)

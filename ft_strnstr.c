@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 07:54:31 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/21 14:42:14 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/25 22:58:49 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ const char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	j = 0;
+	if (len == 0)
+		return (NULL);
 	while (haystack[i] && len)
 	{
 		if (needle[j] == haystack[i])

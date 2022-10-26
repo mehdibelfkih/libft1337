@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 17:03:59 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/22 11:35:40 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/25 21:56:31 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (i < start)
 		return (ft_calloc(1, 1));
 	else if (i >= start + len)
-		s1 = malloc(len);
+		s1 = malloc(len + 1);
 	else
-		s1 = malloc(i - start);
+		s1 = malloc(i - start + 1);
 	if (!s1)
 		return (NULL);
 	while (len > 0 && s[start])
