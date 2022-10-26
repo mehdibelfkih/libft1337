@@ -6,7 +6,7 @@
 #    By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 09:52:57 by ebelfkih          #+#    #+#              #
-#    Updated: 2022/10/25 18:07:46 by ebelfkih         ###   ########.fr        #
+#    Updated: 2022/10/26 01:15:02 by ebelfkih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ ft_memset.c ft_strlcpy.c ft_strlen.c ft_tolower.c ft_toupper.c ft_strchr.c ft_st
 ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c\
 ft_strtrim.c 
 
-CC = gcc
+CC = cc
 
 FLAGS = -Wall -Wextra -Werror -c
 

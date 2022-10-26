@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:34:36 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/25 13:47:44 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/26 01:34:40 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,26 @@ int	wkt(char const *s1, char const *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*s;
+	int		l;
+	int		t;
+	int		j;
 
+	l = wkl(s1, set);
+	t = wkt(s1, set);
+	j = 0;
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	s = malloc(wkt(s1, set) - wkl(s1, set));
+	s = malloc(t - l + 1);
 	if (!s)
 		return (NULL);
-	s = ft_substr(s1, wkl(s1, set), wkt(s1, set) - wkl(s1, set));
+	while (t > 0 )
+	{
+		s[j] = s[l];
+		l++;
+		j++;
+		t--;
+	}
+	s[j] = '\0';
 	return (s);
 }
+
