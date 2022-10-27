@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 09:57:26 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/26 13:50:51 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/28 00:24:58 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include<stdio.h>
 # include<stdlib.h>
 # include<string.h>
+# include<unistd.h>
 # include<xlocale.h>
 # include<ctype.h>
 
@@ -28,12 +29,15 @@ int			ft_isprint(int c);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		ft_bzero(void *s, size_t n);
-char		ft_tolower(int c);
-char		ft_toupper(int c);
+int			ft_tolower(int c);
+int			ft_toupper(int c);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 void		*ft_calloc(size_t count, size_t size);
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(char *s, int fd);
+void		ft_putendl_fd(char *s, int fd);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
 void		*ft_memset(void *s, int c, size_t n);
