@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 09:57:26 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/28 00:24:58 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/28 00:52:42 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 void		*ft_calloc(size_t count, size_t size);
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
+char		*ft_itoa(int n);
 void		ft_putendl_fd(char *s, int fd);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);

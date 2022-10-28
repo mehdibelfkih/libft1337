@@ -1,22 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 15:29:17 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/25 13:46:41 by ebelfkih         ###   ########.fr       */
+/*   Created: 2022/10/28 00:52:12 by ebelfkih          #+#    #+#             */
+/*   Updated: 2022/10/28 01:19:02 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+char *ft_itoa(int n)
 {
-	char	*s3;
-
-	// s3 = ft_strjoin("", "NULL");
-	s3 = ft_strtrim("mehdi", "mehdi");
-	printf("o > %s\n", s3);
+    int i;
+    int j;
+    int a;
+    char *s;
+    
+    j = n;
+    i = 0;
+    while (j != 0)
+    {
+      j = j / 10;
+      i++;  
+    }
+    a = i ;
+    if (n < 0)
+    {
+        n = -n;
+        i++;
+    }
+    s = malloc(i + 1);
+    s[i] = '\0';
+    i--;
+    while (a >= 0)
+    {
+        s[i] = (n%10) + 48;
+        n = n / 10;
+        i--;
+        a--;
+    }
+    s[i + 1] = '-';
+    return (s);
 }
