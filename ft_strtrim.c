@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:34:36 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/28 00:10:40 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/30 02:38:15 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,48 +17,39 @@ int	wkl(char const *s1, char const *set)
 	int	i;
 
 	i = 0;
-	if (ft_strnstr(s1, set, ft_strlen(set)))
-		i = ft_strlen(set);
-	return (i);
+	while (s1[i])
+	{
+		if (!ft_strchr(set, s1[i]))
+			return (i);
+		i++;
+	}
+	return (0);
 }
 
 int	wkt(char const *s1, char const *set)
 {
 	int	i;
 
-	i = 0;
-	if (ft_strnstr(s1 + (ft_strlen(s1) - ft_strlen(set)), set, ft_strlen(s1)))
-		i = ft_strlen(set);
-	return (i);
+	i = ft_strlen(s1) - 1;
+	while (s1[i])
+	{
+		if (!ft_strchr(set, s1[i]))
+			return (i);
+		i--;
+	}
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*s;
-	int		l;
 	int		t;
-	int		j;
-	int		lens;
 
-	l = wkl(s1, set);
 	t = wkt(s1, set);
-	lens = ft_strlen(s1);
-	j = 0;
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	s = malloc(lens - t - l + 1);
-	if (!s)
-		return (NULL);
-	while (lens - t - l > j)
-	{
-		s[j] = s1[l + j];
-		j++;
-	}
-	s[j] = '\0';
-	return (s);
+	return (ft_substr(s1,  wkl(s1, set), wkt(s1, set)- wkl(s1, set) + 1));
 }
-int main()
+int main ()
 {
-	char *str = "abbbccccbhjdgsabbcc"; //hjdgs
-	printf("%s", ft_strtrim(str, "abc"));
+	printf("%s",ft_strtrim("mehdi belfkih mehdi", "mehdi"));
 }

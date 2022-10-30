@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 07:54:31 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/26 13:54:29 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/29 05:32:37 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,20 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	j = 0;
 	if (!*needle)
 		return ((char *)(haystack));
-	while (haystack[i] && len)
+	while (haystack[i] && len > i)
 	{
-		if (needle[j] == haystack[i])
+		if ((unsigned char)needle[j] == (unsigned char)haystack[i])
 		{
 			i++;
 			j++;
 		}
 		if (needle[j] == '\0')
-			return ((char *)haystack + i - j);
-		if (needle[j] != haystack[i])
+			return ((char *)(haystack + i - j));
+		if ((unsigned char)needle[j] != (unsigned char)haystack[i])
 		{
 			i = i - j + 1 ;
 			j = 0;
 		}
-		len --;
 	}
 	return (NULL);
 }
