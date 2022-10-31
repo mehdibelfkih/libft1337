@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 00:52:12 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/30 01:15:32 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/31 05:39:20 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,21 @@ int	hal(int j)
 	return (i);
 }
 
-char	*ks(int n)
-{
-	if (n == 0)
-		return ("0");
-	if (n == -2147483648)
-		return ("-2147483648");
-	return (NULL);
-}
+// char	*ks(int n)
+// {
+// 	char *s;
+// 	char *s1;
+
+// 	s = malloc(2);
+// 	s = "0";
+// 	s1 = malloc(12);
+// 	s1 = "-2147483648";
+// 	if (n == 0)
+// 		return (s);
+// 	if (n == -2147483648)
+// 		return (s1);
+// 	return (NULL);
+// }
 
 char	*ft_itoa(int n)
 {
@@ -40,8 +47,8 @@ char	*ft_itoa(int n)
 	int		a;
 	char	*s;
 
-	if (ks(n))
-		return (ks(n));
+	// if (ks(n))
+	// 	return (ks(n));
 	i = hal(n);
 	a = i + 1;
 	if (n < 0)
@@ -59,6 +66,11 @@ char	*ft_itoa(int n)
 		n = n / 10;
 		i--;
 	}
-	s[i + 1] = '-';
+	if (i == -1)
+		s[i + 1] = '-';
 	return (s);
 }
+// int main(void)
+// {
+// 	printf("%s", ft_itoa(-123));
+// }

@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:34:36 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/30 02:38:15 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/10/31 07:46:57 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		t;
 
 	t = wkt(s1, set);
-	if (s1 == NULL || set == NULL)
+	if (s1 == NULL)
 		return (NULL);
-	return (ft_substr(s1,  wkl(s1, set), wkt(s1, set)- wkl(s1, set) + 1));
-}
-int main ()
-{
-	printf("%s",ft_strtrim("mehdi belfkih mehdi", "mehdi"));
+	if (set == NULL)
+		return (ft_strdup(s1));
+	if (wkl(s1, set) == wkt(s1, set))
+		return (ft_strdup(""));
+	return (ft_substr(s1, wkl(s1, set), wkt(s1, set) - wkl(s1, set) + 1));
 }

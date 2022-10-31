@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 12:43:11 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/31 22:49:41 by ebelfkih         ###   ########.fr       */
+/*   Created: 2022/10/31 00:57:55 by ebelfkih          #+#    #+#             */
+/*   Updated: 2022/10/31 07:56:12 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int		i;
-	int		j;
-	char	*s2;
+	size_t	i;
 
-	i = ft_strlen(s1);
-	j = 0;
-	s2 = malloc(i * sizeof(char) + 1);
-	if (!s2)
-		return (NULL);
-	while (i >= j)
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
 	{
-		s2[j] = s1[j];
-		j++;
+		f(i, &s[i]);
+		i++;
 	}
-	return (s2);
 }
+
+// void    f(unsigned int n, char *str)
+// {
+//     if (n == 3)
+//         *str = 'x';
+//     if (n == 1)
+//         *str = '2';
+// }
+
+// int main()
+// {
+//     char a[6] = "asale";
+//     ft_striteri(a, f);
+//     printf("%s\n", a);
+// }
