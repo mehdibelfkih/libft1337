@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 01:29:02 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/31 22:45:31 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/02 03:15:41 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,15 @@ char	**ft_split(char const *s, char c)
 	i = -1;
 	len = 0;
 	p = -1;
-	if (!s || !(split = malloc((io(s, c) + 1) * sizeof(char *))))
+	if (!s || !(split = malloc((io(s, c) + 1))))
 		return (0);
 	split[io(s, c)] = 0;
-	if (io(s, c) == 1)
-	{
-		split[0] = ft_strdup(s);
-		return (split);
-	}
 	while (s[++i])
 		if (s[i] != c)
 		{
 			start = i;
-			while (s[i] != c)
-			{
-				i++;
+			while (s[i++] != c)
 				len++;
-			}
 			split[++p] = ft_substr(s, start, len);
 			len = 0;
 			i--;
@@ -66,25 +58,15 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 
-
-
-
-
-
-
-
-
-
-
 // int	main(void)
 // {
 // 	char	**n;
 
-// 	n = ft_split("mehdibelfkih", 'x' );
+// 	n = ft_split("mehdibelfkih", 'i' );
 // 	printf("%s-\n", n[0]);
 // 	printf("%s-\n", n[1]);
-// 	//printf("%s-\n", n[2]);
-// 	// printf("%s-\n", n[3]);
+// 	printf("%s-\n", n[2]);
+// 	printf("%s-\n", n[3]);
 // 	// printf("%s-\n", n[4]);
 // 	// printf("%s-\n", n[5]);
 // 	// printf("%s-\n", n[6]);

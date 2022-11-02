@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 00:52:12 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/31 05:39:20 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/02 03:13:59 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	hal(int j)
 	int	i;
 
 	i = 0;
+	if (j < 0)
+		i++;
 	while (j != 0)
 	{
 		j = j / 10;
@@ -25,52 +27,39 @@ int	hal(int j)
 	return (i);
 }
 
-// char	*ks(int n)
-// {
-// 	char *s;
-// 	char *s1;
-
-// 	s = malloc(2);
-// 	s = "0";
-// 	s1 = malloc(12);
-// 	s1 = "-2147483648";
-// 	if (n == 0)
-// 		return (s);
-// 	if (n == -2147483648)
-// 		return (s1);
-// 	return (NULL);
-// }
+char	*ks(int n)
+{
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	return (NULL);
+}
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	int		a;
 	char	*s;
+	int		i;
 
-	// if (ks(n))
-	// 	return (ks(n));
 	i = hal(n);
-	a = i + 1;
-	if (n < 0)
-	{
-		n = -n;
-		i++;
-	}
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	s = malloc(i + 1);
 	if (!s)
 		return (NULL);
 	s[i--] = '\0';
-	while (--a >= 0)
+	if (n < 0)
+	{
+		s[0] = '-';
+		n = -n;
+	}
+	while (n)
 	{
 		s[i] = (n % 10) + 48;
 		n = n / 10;
 		i--;
 	}
-	if (i == -1)
-		s[i + 1] = '-';
 	return (s);
 }
-// int main(void)
-// {
-// 	printf("%s", ft_itoa(-123));
-// }

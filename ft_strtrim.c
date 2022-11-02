@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:34:36 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/31 07:46:57 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/02 03:12:06 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,6 @@ int	wkt(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		t;
-
-	t = wkt(s1, set);
 	if (s1 == NULL)
 		return (NULL);
 	if (set == NULL)
