@@ -6,13 +6,13 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:34:36 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/03 05:32:49 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/03 05:44:27 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	wkl(char const *s1, char const *set)
+static int	wkl(char const *s1, char const *set)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	wkl(char const *s1, char const *set)
 	return (-1);
 }
 
-int	wkt(char const *s1, char const *set)
+static int	wkt(char const *s1, char const *set)
 {
 	int	i;
 

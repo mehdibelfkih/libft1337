@@ -6,13 +6,13 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 05:41:53 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/30 01:18:22 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/03 05:42:03 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ks(int n)
+static char	*ks(int n)
 {
 	if (n == 0)
 		return ("0");

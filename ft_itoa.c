@@ -6,13 +6,13 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 00:52:12 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/02 22:01:25 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/03 05:46:04 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	hal(int j)
+static int	counter(int j)
 {
 	int	i;
 
@@ -27,21 +27,12 @@ int	hal(int j)
 	return (i);
 }
 
-char	*ks(int n)
-{
-	if (n == 0)
-		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	return (NULL);
-}
-
 char	*ft_itoa(int n)
 {
 	char	*s;
 	int		i;
 
-	i = hal(n);
+	i = counter(n);
 	if (n == 0)
 		return (ft_strdup("0"));
 	if (n == -2147483648)
