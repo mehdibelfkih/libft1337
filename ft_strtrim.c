@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:34:36 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/02 03:12:06 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/02 05:16:42 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(""));
 	return (ft_substr(s1, wkl(s1, set), wkt(s1, set) - wkl(s1, set) + 1));
 }
+// int main (void)
+// {
+// 	printf("%s", ft_strtrim("    abaaafghjdfghjabbssabaa   ", "abc"));
+// }

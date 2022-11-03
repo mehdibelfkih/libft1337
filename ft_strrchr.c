@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 01:17:44 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/29 05:11:22 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/03 02:02:21 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	if (c == '\0')
 		return ((char *)(s + i));
-	if (!*s)
+	if (!s)
 		return (NULL);
-	i--;
 	while (i >= 0)
 	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
+		if ((unsigned char)s[i] == (unsigned char)c)
+			return ((char *)s + i);
 		i--;
 	}
 	return (NULL);

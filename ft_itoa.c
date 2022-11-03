@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 00:52:12 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/02 03:13:59 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/02 22:01:25 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ char	*ft_itoa(int n)
 		return (ft_strdup("0"));
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	s = malloc(i + 1);
+	s = ft_calloc(i + 1, 1);
 	if (!s)
 		return (NULL);
-	s[i--] = '\0';
+	i--;
 	if (n < 0)
 	{
 		s[0] = '-';

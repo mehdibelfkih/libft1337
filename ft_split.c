@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 01:29:02 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/02 03:15:41 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/03 01:19:36 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,22 @@ char	**ft_split(char const *s, char c)
 			i--;
 		}
 	return (split);
+	return 0;
 }
 
 // int	main(void)
 // {
-// 	char	**n;
+// 	// char	**n;
 
-// 	n = ft_split("mehdibelfkih", 'i' );
-// 	printf("%s-\n", n[0]);
-// 	printf("%s-\n", n[1]);
-// 	printf("%s-\n", n[2]);
-// 	printf("%s-\n", n[3]);
+// 	// n = ft_split("mehdibelfkih", 'i' );
+// 	// printf("%s-\n", n[0]);
+// 	// printf("%s-\n", n[1]);
+// 	// printf("%s-\n", n[2]);
+// 	// printf("%s-\n", n[3]);
 // 	// printf("%s-\n", n[4]);
 // 	// printf("%s-\n", n[5]);
 // 	// printf("%s-\n", n[6]);
 // 	// printf("%s-\n", n[7]);
 // 	// printf("%s-\n", n[8]);
+// 	printf("%d", io("mmmmmmmm", 'n'));
 // 	}
