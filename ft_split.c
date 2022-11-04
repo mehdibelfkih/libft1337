@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 01:29:02 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/03 21:55:57 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/04 22:49:24 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,60 +19,67 @@ int	io(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (*s == '\0')
+		return (0);
 	if (s[i] != c)
 		j++;
-	i++;
-	while (s[i])
-	{
+	while (s[++i])
 		if (s[i] != c && s[i - 1] == c)
 			j++;
-		i++;
-	}
 	return (j);
 }
+// void	plen(char **splt, char *s, char c)
+// {
+// 	int		i;
+// 	int		p;
+// 	int		len;
+// 	int		start;
 
+// 	i = -1;
+// 	len = 0;
+// 	p = 0;
+// 	while (s[++i])
+// 	{
+// 		if (s[i] != c)
+// 		{
+// 			start = i;
+// 			while (s[i++] != c && s[i - 1])
+// 				len++;
+// 			splt[p++] = ft_substr(s, start, len);
+// 			len = 0;
+// 			i -= 2;
+// 		}
+// 	}
+// }
 char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		p;
 	int		len;
 	int		start;
-	char	**split;
+	char	**spl;
 
 	i = -1;
 	len = 0;
-	p = -1;
-	split = malloc((io(s, c) + 1) * sizeof(char *));
-	if (!s || !split)
+	p = 0;
+	spl = malloc((io(s, c) + 1) * sizeof(char *));
+	if (!spl)
 		return (0);
-	split[io(s, c)] = 0;
+	spl[io(s, c)] = 0;
+		i = -1;
+	len = 0;
+	p = 0;
 	while (s[++i])
+	{
 		if (s[i] != c)
 		{
 			start = i;
-			while (s[i++] != c)
+			while (s[i++] != c && s[i - 1])
 				len++;
-			split[++p] = ft_substr(s, start, len);
-			if (!split[p])
-				free(split[p--]);
+			spl[p++] = ft_substr(s, start, len);
 			len = 0;
 			i -= 2;
 		}
-	return (split);
+	}
+	return (spl);
 }
-
-// int	main(void)
-// {
-// 	char	**n;
- 
-// 	n = ft_split("                  olol", ' ' );
-// 	printf("%s-\n", n[0]);
-// 	printf("%s-\n", n[1]);
-// 	printf("%s-\n", n[2]);
-// 	// printf("%s-\n", n[3]);
-// 	// printf("%s-\n", n[4]);
-// 	// printf("%s-\n", n[5]);
-// 	// printf("%s-\n", n[6]);
-// 	// printf("%s-\n", n[7]);
-// 	// printf("%s-\n", n[8]);
-// 	}
