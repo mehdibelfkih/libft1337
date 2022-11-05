@@ -31,10 +31,10 @@ int	io(char const *s, char c)
 
 void	plen(char **spl, const char *s, char c)
 {
-	int		i;
-	int		p;
-	int		len;
-	int		start;
+	int			i;
+	size_t		p;
+	size_t		len;
+	int			start;
 
 	i = -1;
 	len = 0;

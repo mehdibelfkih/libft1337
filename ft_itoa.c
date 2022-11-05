@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	counter(int j)
+static unsigned int	counter(int j)
 {
 	int	i;
 
@@ -29,8 +29,8 @@ static int	counter(int j)
 
 char	*ft_itoa(int n)
 {
-	char	*s;
-	int		i;
+	char				*s;
+	unsigned int		i;
 
 	i = counter(n);
 	if (n == 0)
