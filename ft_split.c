@@ -28,45 +28,15 @@ int	io(char const *s, char c)
 			j++;
 	return (j);
 }
-// void	plen(char **splt, char *s, char c)
-// {
-// 	int		i;
-// 	int		p;
-// 	int		len;
-// 	int		start;
 
-// 	i = -1;
-// 	len = 0;
-// 	p = 0;
-// 	while (s[++i])
-// 	{
-// 		if (s[i] != c)
-// 		{
-// 			start = i;
-// 			while (s[i++] != c && s[i - 1])
-// 				len++;
-// 			splt[p++] = ft_substr(s, start, len);
-// 			len = 0;
-// 			i -= 2;
-// 		}
-// 	}
-// }
-char	**ft_split(char const *s, char c)
+void	plen(char **spl, const char *s, char c)
 {
 	int		i;
 	int		p;
 	int		len;
 	int		start;
-	char	**spl;
 
 	i = -1;
-	len = 0;
-	p = 0;
-	spl = malloc((io(s, c) + 1) * sizeof(char *));
-	if (!spl)
-		return (0);
-	spl[io(s, c)] = 0;
-		i = -1;
 	len = 0;
 	p = 0;
 	while (s[++i])
@@ -81,5 +51,16 @@ char	**ft_split(char const *s, char c)
 			i -= 2;
 		}
 	}
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**spl;
+
+	spl = malloc((io(s, c) + 1) * sizeof(char *));
+	if (!spl)
+		return (0);
+	spl[io(s, c)] = 0;
+	plen(spl, s, c);
 	return (spl);
 }
