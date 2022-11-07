@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 09:57:26 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/06 22:38:27 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/07 09:10:56 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@
 # include<xlocale.h>
 # include<ctype.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 int			ft_isalnum(int c);
 int			ft_atoi(const char *str);
 int			ft_isalpha(int c);
@@ -54,5 +59,11 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		**ft_split(char const *s, char c);
+void		ft_lstadd_back(t_list **lst, t_list *new);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+t_list		*ft_lstlast(t_list *lst);
+t_list		*ft_lstnew(void *content);
+int			ft_lstsize(t_list *lst);
+void		ft_lstdelone(t_list *lst, void (*del)(void*));
 
 #endif
