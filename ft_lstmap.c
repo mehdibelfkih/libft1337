@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 23:19:52 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/09 11:34:27 by ebelfkih         ###   ########.fr       */
+/*   Created: 2022/11/07 10:37:56 by ebelfkih          #+#    #+#             */
+/*   Updated: 2022/11/09 11:40:46 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*p;
+	t_list	*r;
+	t_list	*h;
 
-	if (!new)
-		return ;
-	if (*lst == NULL)
-		ft_lstadd_front(lst, new);
-	else
+	if (!lst || !f || !del)
+		return (NULL);
+	r = ft_lstnew(f(lst->content));
+	if (!r)
 	{
-		p = ft_lstlast(*lst);
-		p->next = new;
+		ft_lstclear(&r, del);
+		return (NULL);
 	}
+	lst = lst->next;
+	while (lst)
+	{
+		h = ft_lstnew(f(lst->content));
+		ft_lstadd_back(&r, h);
+		if (!h)
+		{
+			ft_lstclear(&r, del);
+			return (NULL);
+		}
+		lst = lst->next;
+	}
+	return (r);
 }
