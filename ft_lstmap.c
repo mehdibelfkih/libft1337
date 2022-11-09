@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:37:56 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/09 11:40:46 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:18:38 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	r = ft_lstnew(f(lst->content));
 	if (!r)
-	{
-		ft_lstclear(&r, del);
 		return (NULL);
-	}
 	lst = lst->next;
 	while (lst)
 	{
