@@ -6,13 +6,13 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 01:29:02 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/07 00:38:31 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/11 04:53:08 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	io(char const *s, char c)
+int	n_of_world(char const *s, char c)
 {
 	int	i;
 	int	j;
@@ -33,12 +33,9 @@ int	ft_clear(char **spl)
 {
 	int	i;
 
-	i = 0;
-	while (spl[i])
-	{
+	i = -1;
+	while (spl[++i])
 		free(spl[i]);
-		i++;
-	}
 	free(spl);
 	return (-1);
 }
@@ -74,10 +71,10 @@ char	**ft_split(char const *s, char c)
 {
 	char	**spl;
 
-	spl = malloc((io(s, c) + 1) * sizeof(char *));
+	spl = malloc((n_of_world(s, c) + 1) * sizeof(char *));
 	if (!spl)
 		return (0);
-	spl[io(s, c)] = 0;
+	spl[n_of_world(s, c)] = 0;
 	if (plen(spl, s, c) < 0)
 		return (NULL);
 	return (spl);

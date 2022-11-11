@@ -6,19 +6,15 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 09:57:26 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/09 08:16:33 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/10 08:51:20 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include<stdio.h>
 # include<stdlib.h>
-# include<string.h>
 # include<unistd.h>
-# include<xlocale.h>
-# include<ctype.h>
 
 typedef struct s_list
 {

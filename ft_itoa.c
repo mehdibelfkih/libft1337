@@ -6,13 +6,13 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 00:52:12 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/03 05:46:04 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/11 04:51:37 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	counter(int j)
+unsigned int	counter(int j)
 {
 	int	i;
 
