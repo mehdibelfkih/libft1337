@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 17:03:59 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/25 21:56:31 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/18 21:05:00 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	j;
 	char			*s1;
 
+	if (!s)
+		return (NULL);
 	i = ft_strlen(s);
 	j = 0;
 	if (i < start)

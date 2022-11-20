@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 00:07:45 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/21 14:42:48 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/15 05:43:16 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
+	if (d == s)
+		return (dest);
 	if (d == (unsigned char *)0 && s == (unsigned char *)0)
 		return (NULL);
 	while (n > i)

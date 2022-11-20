@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 07:52:47 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/10/26 13:14:09 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/12 23:15:48 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int	ft_atoi(const char *str)
 	si = 1;
 	while (str[i] == ' ' || (9 <= str[i] && str[i] <= 13))
 		i++;
-	if (str[i] == '-' && ft_isdigit(str[i + 1]))
+	if (str[i] == '-' )
 	{		
 		si = -1;
 		i++;
 	}
-	else if (str[i] == '+' && ft_isdigit(str[i + 1]))
+	else if (str[i] == '+')
 		i++;
 	while (ft_isdigit(str[i]) && str[i])
 	{

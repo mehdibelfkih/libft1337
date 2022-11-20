@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:31:57 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/03 01:37:03 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/15 05:45:15 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	s2 = malloc(ft_strlen(s) + 1);
 	if (!s2)

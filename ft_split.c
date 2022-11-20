@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 01:29:02 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/11 04:53:08 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/15 06:07:56 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,12 @@ char	**ft_split(char const *s, char c)
 {
 	char	**spl;
 
+	if (!s)
+		return (NULL);
 	spl = malloc((n_of_world(s, c) + 1) * sizeof(char *));
 	if (!spl)
-		return (0);
-	spl[n_of_world(s, c)] = 0;
+		return (NULL);
+	spl[n_of_world(s, c)] = NULL;
 	if (plen(spl, s, c) < 0)
 		return (NULL);
 	return (spl);
