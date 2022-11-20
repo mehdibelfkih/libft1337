@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 01:29:02 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/15 06:07:56 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/20 19:42:52 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,15 @@ int	n_of_world(char const *s, char c)
 	return (j);
 }
 
-int	ft_clear(char **spl)
+int	ft_clear(char **spl, int p)
 {
 	int	i;
 
-	i = -1;
-	while (spl[++i])
-		free(spl[i]);
+	i = 0;
+	while (i < p)
+	{
+		free(spl[i++]);
+	}
 	free(spl);
 	return (-1);
 }
@@ -59,7 +61,7 @@ int	plen(char **spl, const char *s, char c)
 				len++;
 			spl[p++] = ft_substr(s, start, len);
 			if (spl[p - 1] == NULL)
-				return (ft_clear(spl));
+				return (ft_clear(spl, p));
 			len = 0;
 			i -= 2;
 		}

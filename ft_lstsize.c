@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 23:03:41 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/07 08:18:10 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/20 20:33:44 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 int	ft_lstsize(t_list *lst)
 {
 	int		i;
-	t_list	*p;
 
 	i = 0;
-	p = lst;
 	if (!lst)
 		return (0);
-	while (p != NULL)
+	while (lst != NULL)
 	{
-		p = p->next;
+		lst = lst->next;
 		i++;
 	}
 	return (i);

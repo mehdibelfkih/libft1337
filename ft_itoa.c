@@ -6,13 +6,13 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 00:52:12 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/11 04:51:37 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/20 20:29:56 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	counter(int j)
+unsigned int	nbr_counter(int j)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ char	*ft_itoa(int n)
 	char				*s;
 	unsigned int		i;
 
-	i = counter(n);
+	i = nbr_counter(n);
 	if (n == 0)
 		return (ft_strdup("0"));
 	if (n == -2147483648)

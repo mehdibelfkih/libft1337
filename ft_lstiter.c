@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:25:14 by ebelfkih          #+#    #+#             */
-/*   Updated: 2022/11/09 09:45:14 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2022/11/20 20:31:11 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*p;
-
-	p = lst;
 	if (lst == NULL || !f)
 		return ;
-	while (p)
+	while (lst)
 	{
-		f(p->content);
-		p = p->next;
+		f(lst->content);
+		lst = lst->next;
 	}
 }
